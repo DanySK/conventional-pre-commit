@@ -41,7 +41,7 @@ PURPLE='\033[0;35m'
 NC='\033[0m'
 
 echo "[Commit message] $( cat "$msg_file" )"
-echo "
+echo -e "
 Your commit message does ${RED}not${NC} follow ${PURPLE}Conventional Commits${NC} formatting
 ${BLUE}https://www.conventionalcommits.org/${NC}
 
