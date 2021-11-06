@@ -39,21 +39,20 @@ echo "
 Your commit message does not follow Conventional Commits formatting
 https://www.conventionalcommits.org/
 
-Conventional Commits start with one of the below types, followed by a colon,
-followed by the commit message:
-
+Conventional Commits start with one of the below types:
     $(IFS=' '; echo "${types[*]}")
+followed by an optional scope within parentheses,
+followed by an exclamation mark (!) in case of breaking change,
+followed by a colon (:),
+followed by the commit message.
 
-Example commit message adding a feature:
+Example commit message fixing a bug non-breaking backwards compatibility:
+    fix(module): fix bug #42
 
-    feat: implement new API
+Example commit message adding a non-breaking feature:
+    feat(module): add new API
 
-Example commit message fixing an issue:
-
-    fix: remove infinite loop
-
-Optionally, include a scope in parentheses after the type for more context:
-
-    fix(account): remove infinite loop
+Example commit message with a breaking change:
+    refactor(module)!: remove infinite loop
 "
 exit 1
